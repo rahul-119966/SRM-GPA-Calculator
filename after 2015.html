@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WRZQKHC');</script>
+<!-- End Google Tag Manager -->
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+       var i=7; var res=0.00; var cr=0; var mul=0.0;
+       $('#add').click(function(){
+           i++;
+           $('#dynamic').append('<tr id="row'+i+'"><td><h4>Subject '+i+'</h4><input type="text" name="name" id="n'+i+'" placeholder="Enter credit" class="form-control name_list"><br><select class="form-control" id="s'+i+'"><option value="10">O (10)</option><option value="9">A+ (9)</option><option value="8">A (8)</option><option value="7">B+ (7)</option><option value="6">B (6)</option><option value="5">C (5)</option><option value="4">P (4)</option><option value="0">F (0)</option><option value="0">Abs (0)</option><option value="0" selected="selected">I (0)</option></select></td><td id="gh"><input type="button" value="X" class="btn btn-danger btn-remove" id="'+i+'"></td></tr>');
+       });
+       $(document).on('click','.btn-remove',function(){
+          var button_id=$(this).attr("id");
+          $('#row'+button_id+'').remove();
+          i--;
+       });
+       $('#calc').click(function(){
+           for(var x=1;x<=i;x++){
+           
+           cr=cr+parseInt($('#n'+x+'').val());
+           mul=mul+(($('#n'+x+'').val())*($('#s'+x+'').val()));
+           res=mul/cr;
+       }
+           
+           bootbox.alert({
+            title:"Result",
+            message: ("Total credit: "+cr+"<br> Your GPA is: "+res),
+            callback: function(){
+                location.reload();
+            }
+        });
+    
+       });
+    });  
+</script>
+<style>
+     #gh {
+       vertical-align: bottom;
+    }
+</style>
+
+    </head>
+    <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRZQKHC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        <div class="container-fluid">
+            <div class="form-group">
+                <form name="add_name" id="add_name">
+                    <table class="table" id="dynamic">
+                        <tr id="row1" >
+                            <td class="col-xs-10"><h4>Subject 1</h4>
+                                <input type="number" max="10" min="1" name="name" id="n1" placeholder="Enter credit" class="form-control name_list"><br>
+                            <select class="form-control" id="s1">
+                    <option value="10">O (10)</option>
+                    <option value="9">A+ (9)</option>
+                    <option value="8">A (8)</option>
+                    <option value="7">B+ (7)</option>
+                    <option value="6">B (6)</option>
+                    <option value="5">C (5)</option>
+                    <option value="4">P (4)</option>
+                    <option value="0">F (0)</option>
+                    <option value="0">Abs (0)</option>
+                    <option value="0" selected="selected">I (0)</option>
+                </select></td>
+                            <td class="col-xs-2"></td>
+                        </tr>
+                        
+                        
+                        <tr id="row2">
+                            <td><h4>Subject 2</h4>
+                                <input type="number" max="10" min="1" id="n2" name="name" placeholder="Enter credit" class="form-control name_list"><br>
+                            <select class="form-control" id="s2">
+                    <option value="10">O (10)</option>
+                    <option value="9">A+ (9)</option>
+                    <option value="8">A (8)</option>
+                    <option value="7">B+ (7)</option>
+                    <option value="6">B (6)</option>
+                    <option value="5">C (5)</option>
+                    <option value="4">P (4)</option>
+                    <option value="0">F (0)</option>
+                    <option value="0">Abs (0)</option>
+                    <option value="0" selected="selected">I (0)</option>
+                </select></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr id="row3">
+                            <td><h4>Subject 3</h4>
+                                <input type="number" max="10" min="1" id="n3" name="name" placeholder="Enter credit" class="form-control name_list"><br>
+                            <select class="form-control" id="s3">
+                    <option value="10">O (10)</option>
+                    <option value="9">A+ (9)</option>
+                    <option value="8">A (8)</option>
+                    <option value="7">B+ (7)</option>
+                    <option value="6">B (6)</option>
+                    <option value="5">C (5)</option>
+                    <option value="4">P (4)</option>
+                    <option value="0">F (0)</option>
+                    <option value="0">Abs (0)</option>
+                    <option value="0" selected="selected">I (0)</option>
+                </select></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr id="row4">
+                            <td><h4>Subject 4</h4>
+                                <input type="number" max="10" min="1" id="n4" name="name" placeholder="Enter credit" class="form-control name_list"><br>
+                            <select class="form-control" id="s4">
+                    <option value="10">O (10)</option>
+                    <option value="9">A+ (9)</option>
+                    <option value="8">A (8)</option>
+                    <option value="7">B+ (7)</option>
+                    <option value="6">B (6)</option>
+                    <option value="5">C (5)</option>
+                    <option value="4">P (4)</option>
+                    <option value="0">F (0)</option>
+                    <option value="0">Abs (0)</option>
+                    <option value="0" selected="selected">I (0)</option>
+                </select></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr id="row5">
+                            <td><h4>Subject 5</h4>
+                                <input type="number" max="10" min="1" id="n5" name="name" placeholder="Enter credit" class="form-control name_list"><br>
+                            <select class="form-control" id="s5">
+                    <option value="10">O (10)</option>
+                    <option value="9">A+ (9)</option>
+                    <option value="8">A (8)</option>
+                    <option value="7">B+ (7)</option>
+                    <option value="6">B (6)</option>
+                    <option value="5">C (5)</option>
+                    <option value="4">P (4)</option>
+                    <option value="0">F (0)</option>
+                    <option value="0">Abs (0)</option>
+                    <option value="0" selected="selected">I (0)</option>
+                </select></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr id="row6">
+                            <td><h4>Subject 6</h4>
+                                <input type="number" max="10" min="1" id="n6" name="name" placeholder="Enter credit" class="form-control name_list"><br>
+                            <select class="form-control" id="s6">
+                    <option value="10">O (10)</option>
+                    <option value="9">A+ (9)</option>
+                    <option value="8">A (8)</option>
+                    <option value="7">B+ (7)</option>
+                    <option value="6">B (6)</option>
+                    <option value="5">C (5)</option>
+                    <option value="4">P (4)</option>
+                    <option value="0">F (0)</option>
+                    <option value="0">Abs (0)</option>
+                    <option value="0" selected="selected">I (0)</option>
+                </select></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr id="row7">
+                            <td><h4>Subject 7</h4>
+                                <input type="number" max="10" min="1" id="n7" name="name" placeholder="Enter credit" class="form-control name_list"><br>
+                            <select class="form-control" id="s7">
+                   <option value="10">O (10)</option>
+                    <option value="9">A+ (9)</option>
+                    <option value="8">A (8)</option>
+                    <option value="7">B+ (7)</option>
+                    <option value="6">B (6)</option>
+                    <option value="5">C (5)</option>
+                    <option value="4">P (4)</option>
+                    <option value="0">F (0)</option>
+                    <option value="0">Abs (0)</option>
+                    <option value="0" selected="selected">I (0)</option>
+                </select></td>
+                            <td id="gh"><input type="button" value="Add" class="btn btn-success" id="add"></td>
+                        </tr>
+                    </table>
+                    <input type="button" id="calc" class="btn btn-danger" value="Calculate" onclick="srm()">
+                    
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
